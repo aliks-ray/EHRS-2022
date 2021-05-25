@@ -1230,12 +1230,47 @@ ul {
         margin: 0;
         bottom: 50px;
         left: 22px;
+        z-index: 10;
     }
     .speakers-item__picture:hover {
         transition: 0.4s ease-in-out;
         filter: grayscale(50%);
         opacity: 0.8;
     }
+    .speakers__item {   
+        width: 400px;  
+        height: 400px;  
+        vertical-align: top;  
+        cursor: pointer;  
+        position: relative;  
+      }  
+        
+      .speakers__wrapper {  
+        height: 400px;  
+        transform-style: preserve-3d;  
+        transition: transform .6s;  
+        position: relative;
+      }
+      .speakers-item__picture {  
+        display: block;  
+        position: absolute;  
+        top: 0;  
+        transform: translateZ(200px);  
+        transition: all .6s;
+      }  
+        
+      .speakers-item__picture-full {  
+        display: block;  
+        position: absolute;  
+        top: 0;  
+        height: 400px;  
+        width: 400px;
+        transform: rotateX(-90deg) translateZ(200px);  
+        transition: all .6s;  
+      }
+      .speakers__wrapper:hover {  
+        transform: translateZ(200px) rotateX(90deg);  
+      }  
 }
 
 /*-------- Program --------*/
