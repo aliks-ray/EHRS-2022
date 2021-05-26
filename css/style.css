@@ -1378,6 +1378,7 @@ ul {
         background-position: top left;
         margin-top: 87px;
         padding-top: 440px;
+        transition: 0.3s ease-in-out;
     }
     .program__day--first {
         background-image: url("../img/day1-desktop.png");
