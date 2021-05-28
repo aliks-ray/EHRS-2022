@@ -1577,6 +1577,7 @@ ul {
     max-width: 414px;
     margin: 0 auto;
     padding: 55px 0;
+    padding-bottom: 110px;
     box-sizing: border-box;
 }
 
@@ -1672,3 +1673,146 @@ ul {
         bottom: -37px;
     }
 }
+
+/*-------- Key dates --------*/
+.dates {
+    background-color: var(--basic-pink);
+    position: relative;
+    z-index: 5;
+}
+
+.dates::before {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 38px solid transparent;
+    border-top: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-left: 414px solid var(--background-royal-blue-light);
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.dates::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: var(--basic-blue);
+    border-radius: 50%;
+    top: 20px;
+    left: -235px;
+    width: 581px;
+    height: 581px;
+    filter: blur(100px);
+    z-index: -1;
+}
+
+.dates__container {
+    max-width: 414px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-image: url("../img/bridge-mobile.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    padding-left: 150px;
+    padding-right: 30px;
+    padding-top: 65px;
+    padding-bottom: 40px;
+}
+
+.dates__title {
+    font-family: "Oranienbaum", Arial, serif;
+    font-size: 48px;
+    line-height: 58px;
+    color: var(--basic-white);
+    font-weight: 300;
+    position: absolute;
+    top: -75px;
+    left: 30px;
+    margin: 0;
+    z-index: 10;
+}
+
+.key-dates__title,
+.congress-dates__title {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--basic-white);
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.key-dates__date,
+.congress-dates__date {
+    font-family: "Oranienbaum", Arial, serif;
+    font-size: 32px;
+    line-height: 58px;
+    color: var(--basic-white);
+    font-weight: 300;
+    margin: 0;
+}
+
+.key-dates__description {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: 0;
+    font-weight: 500;
+    color: var(--basic-white);
+    margin: 0;
+}
+
+.key-dates__item {
+    margin-bottom: 25px;
+}
+
+.key-dates__item:last-child {
+    margin-bottom: 40px;
+}
+
+.congress-dates__date {
+    font-size: 48px;
+    padding-bottom: 35px;
+}
+
+.congress-dates__button{
+    font-family: "Montserrat", Arial, serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background-color: var(--basic-white);
+    padding: 16px 40px;
+	color: var(--basic-pink);
+	cursor: pointer;
+	position: relative;
+	transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+.congress-dates__button:hover {
+	color: var(--basic-white);
+	background-color: transparent;
+}
+.congress-dates__button:hover:before {
+	top: 0%;
+	bottom: auto;
+	height: 100%;
+}
+.congress-dates__button:before {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	height: 0px;
+	width: 100%;
+	z-index: -1;
+	content: '';
+	color: var(--basic-white);
+	background: var(--special-blue);
+	transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
