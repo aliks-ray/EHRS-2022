@@ -1,4 +1,4 @@
-/*---------- Variables ----------*/
+/*-------------------- Variables --------------------*/
 
 :root {
     --basic-white: #FFFFFF;
@@ -26,7 +26,7 @@
     --special-blue: #49D1FF;
   }
 
-/*---------- Fonts ----------*/
+/*------------------- Fonts --------------------*/
 
 @font-face {
     font-family: "Montserrat";
@@ -46,7 +46,7 @@
     font-style: normal;
   }
 
-/*---------- Global ----------*/
+/*-------------------- Global --------------------*/
 
 body {
     margin: 0;
@@ -83,7 +83,7 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
+}
 
 .visually-hidden {
   position: absolute;
@@ -98,9 +98,7 @@ ul {
   overflow: hidden;
 }
 
-
-/*---------- Header ----------*/
-@media (min-width: 414px) {
+/*-------------------- Header --------------------*/
 
 .header {
     position: relative;
@@ -108,7 +106,7 @@ ul {
 }
 
 .container {
-    width: 414px;
+    width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -122,18 +120,18 @@ ul {
 }
 
 .main-menu__item {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 15px;
-  color: var(--text-blue);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 15px;
+    color: var(--text-blue);
 }
 
 .header-logo {
     position: absolute;
-    bottom: 480px;
-    left: 108px;
+    bottom: 370px;
+    left: 60px;
 }
 
 .main-nav {
@@ -157,14 +155,14 @@ ul {
     border: 38px solid transparent;
     border-bottom: 0px solid transparent;
     border-left: 0px solid transparent;
-    border-right: 414px solid white;
+    border-right: 320px solid white;
     position: absolute;
     top: -58px;
     width: 100%;
 }
 
 .main-menu__item--registration {
-    margin-left: -75px;
+    margin-left: -35px;
 }
 
 .main-menu__link--registration {
@@ -190,6 +188,22 @@ ul {
     background-color: transparent;
     border: none;
 }
+
+@media (min-width: 414px) {
+    .container {
+        width: 414px;
+    }
+    .header-logo {
+        position: absolute;
+        bottom: 480px;
+        left: 108px;
+    }
+    .main-nav::before {
+        border-right: 414px solid white;
+    }
+    .main-menu__item--registration {
+        margin-left: -75px;
+    }
 }
 
 @media (min-width: 1600px) {
@@ -274,7 +288,7 @@ ul {
     }
 }
 
-/*---------- Footer ----------*/
+/*-------------------- Footer --------------------*/
 
 .footer .container {
     padding: 40px 30px 60px;
@@ -511,9 +525,9 @@ ul {
     }
 }
 
-/*---------- Main ----------*/
+/*------------------------------------------------- Main --------------------------------------------------*/
 
-/*-------- Committee --------*/
+/*------------------ Committee ------------------*/
 
 .committee {
     position: relative;
@@ -526,15 +540,16 @@ ul {
     background-image: url("../img/cut-right-mobile.png");;
     width: 96px;
     height: 297px;
-    top: 60px;
+    top: 150px;
     right: 0;
+    z-index: -5;
 }
 
 .committee__container {
     padding: 0 30px;
     display: flex;
     flex-direction: column;
-    max-width: 414px;
+    max-width: 320px;
     margin: 0 auto;
 }
 
@@ -564,6 +579,7 @@ ul {
     text-transform: uppercase;
     font-weight: 500;
 }
+
 .members__title {
     margin-bottom: 30px;
 }
@@ -575,7 +591,7 @@ ul {
 }
 
 .members__item {
-    width: 165px;
+    width: 100px;
     text-align: center;
 }
 
@@ -583,10 +599,11 @@ ul {
     color: var(--text-dark-blue);
     margin-top: 20px;
     margin-bottom: 30px;
+    font-size: 20px;
 }
 
 .covid {
-    width: 357px;
+    width: 280px;
     margin-bottom: 100px;
 }
 
@@ -636,6 +653,24 @@ ul {
     opacity: 0.7;
 }
 
+@media (min-width: 414px) {
+    .committee::after {
+        top: 60px;
+    }
+    .committee__container {
+        max-width: 100%;
+    }
+    .members__item {
+        width: 165px;
+    }
+    .members__name {
+        font-size: 32px;
+    }
+    .covid {
+        width: 357px;
+    }
+}
+
 @media (min-width: 1600px) {
     .committee {
         margin-top: 150px;
@@ -677,9 +712,6 @@ ul {
         text-align: left;
         margin-right: 100px;
     }
-    /* .members__item:nth-child(3n+3) {
-        margin-right: 0;
-    } */
     .location__text,
     .members__name {
         font-size: 40px;
@@ -687,7 +719,7 @@ ul {
     }
 }
 
-/*-------- About --------*/
+/*---------------- About ----------------*/
 
 .countdown {
     color: var(--text-light-blue);
@@ -720,7 +752,7 @@ ul {
 
 .countdown__item {
     display: inline-block;
-    padding-right: 25px;
+    padding-right: 15px;
     position: relative;
 }
 
@@ -745,7 +777,7 @@ ul {
     bottom: 12px;
     left: 0;
     background-color: var(--text-light-blue);
-    width: 85px;
+    width: 40px;
     height: 1px;
 }
 
@@ -756,7 +788,7 @@ ul {
     bottom: 12px;
     right: 0;
     background-color: var(--text-light-blue);
-    width: 85px;
+    width: 40px;
     height: 1px;
 }
 
@@ -768,8 +800,8 @@ ul {
 
 .countdown__time {
     font-family: "Oranienbaum", Arial, serif;
-    font-size: 60px;
-    line-height: 76px;
+    font-size: 30px;
+    line-height: 36px;
     letter-spacing: 0;
 }
 
@@ -777,11 +809,11 @@ ul {
     content: ":";
     display: block;
     position: absolute;
-    bottom: 18px;
-    right: 10px;
+    bottom: 13px;
+    right: 0;
     font-family: "Oranienbaum", Arial, serif;
-    font-size: 60px;
-    line-height: 76px;
+    font-size: 30px;
+    line-height: 36px;
     letter-spacing: 0;
 }
 
@@ -806,7 +838,7 @@ ul {
 .subscribe__input{
     border: 1px solid var(--border-gray);
     background-color: transparent;
-    width: 366px;
+    width: 288px;
     min-height: 47px;
     outline: none;
     padding: 0 16px;
@@ -850,7 +882,7 @@ ul {
 .collegues__wrapper {
     padding: 0 30px;
     margin: 0 auto;
-    max-width: 414px;
+    max-width: 100%;
     overflow: hidden;
 }
 
@@ -906,6 +938,24 @@ ul {
     line-height: 29px;
     padding-bottom: 172px;
     margin: 0;
+}
+
+@media (min-width: 414px) {
+    .countdown {
+        max-width: 414px;
+    }
+    .countdown__title::before,
+    .countdown__title::after {
+        width: 85px;
+    }
+    .countdown__time,
+    .countdown__item:not(:last-child):after {
+        font-size: 60px;
+        line-height: 76px;
+    }
+    .subscribe__input{
+        width: 366px;
+    }
 }
 
 @media (min-width: 1600px) {
@@ -1041,7 +1091,7 @@ ul {
     }
 }
 
-/*-------- Speakers --------*/
+/*---------------- Speakers ----------------*/
 
 .speakers {
     background-color: var(--background-blue);
@@ -1051,7 +1101,7 @@ ul {
 }
 
 .speakers-wrapper {
-    max-width: 621px;
+    max-width: 320px;
     margin: 0 auto;
     box-sizing: border-box;
     margin-top: -88px;
@@ -1067,7 +1117,7 @@ ul {
 
 .speakers__main-item {
     display: flex;
-    height: 209px;
+    height: 100%;
 }
 
 .speakers__title {
@@ -1081,9 +1131,13 @@ ul {
     font-weight: 300;
 }
 
+.main-item__picture {
+    width: 50%;
+}
+
 .main-item__description {
     position: relative;
-    padding: 20px 15px;
+    padding: 10px 10px;
     width: 50%;
     letter-spacing: 0;
     background-color: var(--speakers-blue);
@@ -1099,10 +1153,10 @@ ul {
 .main-item__date,
 .main-item__speaker {
     font-family: "Oranienbaum", Arial, serif;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 18px;
     margin: 0;
-    padding-bottom: 12px;
+    padding-bottom: 10px;
 }
 
 .main-item__subtitle {
@@ -1116,20 +1170,25 @@ ul {
     opacity: 0.4;
 }
 
-.main-item__img,
-.speakers-item__img {
+.main-item__img {
     width: 100%;
     height: 100%;
+}
+
+.speakers-item__img {
+    width: 100%;
 }
 
 .speakers__items {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    min-width: 414px;
+    min-width: 320px;
 }
 
 .speakers__item {
+    width: 160px;
+    height: 160px;
     flex-grow: 1;
     margin-bottom: -5px
 }
@@ -1158,6 +1217,32 @@ ul {
     margin: 0 auto;
 }
 
+@media (min-width: 414px) {
+    .speakers-wrapper {
+        max-width: 621px;
+    }
+    .speakers__main-item {
+        height: auto;
+    }
+    .main-item__description {
+        padding: 20px 15px;
+    }
+    .main-item__theme,
+    .main-item__date,
+    .main-item__speaker {
+        font-size: 20px;
+        line-height: 24px;
+        padding-bottom: 12px;
+    }
+    .speakers__items {
+        min-width: 414px;
+    }
+    .speakers__item {
+        width: auto;
+        height: auto;
+    }
+}
+
 @media (min-width: 1600px) {
     .speakers-wrapper {
         max-width: 1600px;
@@ -1180,6 +1265,9 @@ ul {
         display: flex;
         flex-direction: column;
         height: auto;
+    }
+    .main-item__picture {
+        width: auto;
     }
     .main-item__img,
     .speakers-item__img {
@@ -1268,7 +1356,7 @@ ul {
       }  
 }
 
-/*-------- Program --------*/
+/*---------------- Program ----------------*/
 
 .program {
     position: relative;
@@ -1281,16 +1369,16 @@ ul {
     border: 38px solid transparent;
     border-bottom: 0px solid transparent;
     border-left: 0px solid transparent;
-    border-right: 414px solid white;
-    top: 62px;
+    border-right: 320px solid white;
+    top: 123px;
     width: 100%;
 }
 
 .program__container {
-    max-width: 414px;
+    max-width: 320px;
     margin: 0 auto;
     box-sizing: border-box;
-    margin-top: -100px;
+    margin-top: -160px;
     z-index: 6;
     position: relative;
     padding: 0 30px;
@@ -1307,10 +1395,11 @@ ul {
 }
 
 .program__day {
-    margin-top: 113px;
+    margin-top: 70px;
     background-repeat: no-repeat;
     background-position: top center;
     padding-top: 394px;
+    background-size: contain;
 }
 
 .program__day--first {
@@ -1352,6 +1441,21 @@ ul {
     background-repeat: no-repeat;
     bottom: 0;
     left: 0;
+}
+
+@media (min-width: 414px) {
+    .program::before {
+        border-right: 414px solid white;
+        top: 62px;
+    }
+    .program__container {
+        max-width: 414px;
+        margin-top: -100px;
+    }
+    .program__day {
+        margin-top: 113px;
+        background-size: auto;
+    }
 }
 
 @media (min-width: 1600px) {
@@ -1401,10 +1505,10 @@ ul {
     }
 }
 
-/*-------- Social events --------*/
+/*---------------- Social events ----------------*/
 
 .events__container {
-    max-width: 414px;
+    max-width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -1434,6 +1538,18 @@ ul {
     padding-top: 100px;
     padding-bottom: 98px;
     background-size: cover;
+}
+
+.event__wrapper {
+    max-width: 500px;
+}
+
+.event--museums .event__wrapper {
+    margin-left: auto;
+}
+
+.event--gala .event__wrapper {
+    margin-right: auto;
 }
 
 .event--gala {
@@ -1481,6 +1597,17 @@ ul {
     padding: 16px 40px;
 }
 
+@media (min-width: 768px) {
+    .event--gala {
+        background-image: url("../img/glasses-desktop.jpg");
+        background-color: transparent;
+    }
+    .event--museums {
+        background-image: url("../img/museums-desktop.jpg");
+        background-position: top 30% left;
+    }
+}
+
 @media (min-width: 1600px) {
     .events__container {
         max-width: 100%;
@@ -1502,21 +1629,6 @@ ul {
         padding-top: 136px;
         padding-bottom: 157px;
     }
-    .event--gala {
-        background-image: url("../img/glasses-desktop.jpg");
-        background-color: transparent;
-    }
-    .event--museums {
-        background-image: url("../img/museums-desktop.jpg");
-        background-position: top 30% left;
-        margin-left: auto;
-    }
-    .event__wrapper {
-        max-width: 500px;
-    }
-    .event--museums .event__wrapper {
-        margin-left: auto;
-    }
     .event__title {
         font-size: 48px;
         line-height: 58px;
@@ -1526,7 +1638,7 @@ ul {
     }
 }
 
-/*-------- Highlights --------*/
+/*---------------- Highlights ----------------*/
 
 .highlights {
     background-color: var(--background-royal-blue-light);
@@ -1541,7 +1653,7 @@ ul {
     border: 38px solid transparent;
     border-bottom: 0px solid transparent;
     border-left: 0px solid transparent;
-    border-right: 414px solid var(--background-royal-blue-light);
+    border-right: 320px solid var(--background-royal-blue-light);
     top: -37px;
     width: 100%;
 }
@@ -1561,7 +1673,7 @@ ul {
 }
 
 .highlights__container {
-    max-width: 414px;
+    max-width: 320px;
     margin: 0 auto;
     padding: 55px 0;
     padding-bottom: 110px;
@@ -1584,7 +1696,7 @@ ul {
 .highlights-item {
     display: flex;
     flex-direction: column;
-    max-width: 355px;
+    max-width: 300px;
     min-height: 420px;
     background-color: var(--basic-white);
     padding: 25px 30px;
@@ -1602,8 +1714,8 @@ ul {
     border: 38px solid transparent;
     border-top: 0px solid transparent;
     border-right: 0px solid transparent;
-    border-left: 355px solid var(--basic-white);
-    bottom: -38px;
+    border-left: 260px solid var(--basic-white);
+    bottom: -37px;
     left: 0;
     width: 100%;
 }
@@ -1620,11 +1732,31 @@ ul {
 
 .highlights-item__text {
     font-family: "Montserrat", Arial, serif;
-    font-size: 16px;
-    line-height: 29px;
+    font-size: 13px;
+    line-height: 26px;
     color: var(--text-dark-gray);
     margin: 0;
     padding-bottom: 20px;
+}
+
+@media (min-width: 414px) {
+    .highlights::before {
+        border-right: 414px solid var(--background-royal-blue-light);
+    }
+    .highlights__container {
+        max-width: 414px;
+    }
+    .highlights-item {
+        max-width: 355px;
+    }
+    .highlights-item::after {
+        border-left: 355px solid var(--basic-white);
+        bottom: -38px;
+    }
+    .highlights-item__text {
+        font-size: 16px;
+        line-height: 29px;
+    }
 }
 
 @media (min-width: 1600px) {
@@ -1661,7 +1793,8 @@ ul {
     }
 }
 
-/*-------- Key dates --------*/
+/*---------------- Key dates ----------------*/
+
 .dates {
     background-color: var(--basic-pink);
     position: relative;
@@ -1675,10 +1808,11 @@ ul {
     border: 38px solid transparent;
     border-top: 0px solid transparent;
     border-right: 0px solid transparent;
-    border-left: 414px solid var(--background-royal-blue-light);
-    top: 0;
+    border-left: 320px solid var(--background-royal-blue-light);
+    top: -1px;
     width: 100%;
-    z-index: -1;
+    z-index: 0;
+    filter: brightness(107%);
 }
 
 .dates::after {
@@ -1687,16 +1821,16 @@ ul {
     position: absolute;
     background-color: var(--basic-blue);
     border-radius: 50%;
-    top: 20px;
-    left: -235px;
-    width: 581px;
-    height: 581px;
+    top: 50px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
     filter: blur(100px);
     z-index: -1;
 }
 
 .dates__container {
-    max-width: 414px;
+    max-width: 320px;
     margin: 0 auto;
     box-sizing: border-box;
     background-image: url("../img/bridge-mobile.png");
@@ -1737,8 +1871,8 @@ ul {
 .key-dates__date,
 .congress-dates__date {
     font-family: "Oranienbaum", Arial, serif;
-    font-size: 32px;
-    line-height: 58px;
+    font-size: 20px;
+    line-height: 25px;
     color: var(--basic-white);
     font-weight: 300;
     margin: 0;
@@ -1746,7 +1880,7 @@ ul {
 
 .key-dates__description {
     font-family: "Montserrat", Arial, sans-serif;
-    font-size: 14px;
+    font-size: 10px;
     line-height: 25px;
     letter-spacing: 0;
     font-weight: 500;
@@ -1763,7 +1897,7 @@ ul {
 }
 
 .congress-dates__date {
-    font-size: 48px;
+    font-size: 28px;
     padding-bottom: 35px;
 }
 
@@ -1775,10 +1909,41 @@ ul {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     background-color: var(--basic-white);
-    padding: 16px 40px;
-	color: var(--basic-pink);
-	cursor: pointer;
-	position: relative;
+    padding: 16px 25px;
+    color: var(--basic-pink);
+    cursor: pointer;
+    position: relative;
+}
+
+@media (min-width: 414px) {
+    .dates::before {
+        border-left: 414px solid var(--background-royal-blue-light);
+        top: 0;
+    }
+    .dates::after {
+        top: 20px;
+        left: -235px;
+        width: 581px;
+        height: 581px;
+    }
+    .dates__container {
+        max-width: 414px;
+    }
+    .key-dates__date,
+    .congress-dates__date {
+        font-size: 32px;
+        line-height: 58px;
+    }
+    .key-dates__description {
+        font-size: 14px;
+        line-height: 25px;
+    }
+    .congress-dates__date {
+        font-size: 48px;
+    }
+    .congress-dates__button{
+        padding: 16px 40px;
+    }
 }
 
 @media (min-width: 1600px) {
@@ -1804,7 +1969,7 @@ ul {
         border: 38px solid transparent;
         border-bottom: 0px solid transparent;
         border-left: 0px solid transparent;
-        border-right: 1800px solid var(--background-gray);
+        border-right: 1600px solid var(--background-gray);
         bottom: -1px;
         width: 100%;
         background-color: transparent;
@@ -1820,11 +1985,12 @@ ul {
         border: 150px solid transparent;
         border-top: 0px solid transparent;
         border-right: 0px solid transparent;
-        border-left: 1800px solid var(--background-royal-blue-light);
+        border-left: 1600px solid var(--background-royal-blue-light);
         top: -1px;
         width: 100%;
         z-index: -1;
         left: 0;
+        filter: brightness(100%);
     }
     .dates__wrapper {
         width: 658px;
