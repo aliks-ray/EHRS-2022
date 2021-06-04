@@ -162,7 +162,8 @@ ul {
 }
 
 .main-menu__item--registration {
-    margin-left: -35px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .main-menu__link--registration {
@@ -200,9 +201,86 @@ ul {
     }
     .main-nav::before {
         border-right: 414px solid white;
+        top: -40px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header-image {
+        display: none;
+    }
+    .container {
+        width: 100%;
+    }
+    .header-video {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+    }
+    .header-video__item {
+        top: 0;
+        left: 0;
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-menu__toggle {
+        display: none;
+    }
+    .main-menu__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .header-logo {
+        width: 152px;
+        height: 83px;
+        position: inherit;
+    }
+    .header-logo__image {
+        width: 152px;
+        height: 83px;
+        top: 742px;
+        left: 120px;
+    }
+    .main-menu__item {
+        position: relative;
+        margin-right: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     .main-menu__item--registration {
-        margin-left: -75px;
+        margin-right: 22px;
+        margin-left: 0;
+    }
+    .main-nav__list {
+        justify-content: space-between;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 3px;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .main-menu__link--info::after,
+    .main-menu__link--program::after,
+    .main-menu__link--accomodation::after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("../img/arrow-down.svg");;
+        width: 6px;
+        height: 3px;
+        top: 5px;
+        right: -10px;
     }
 }
 
@@ -231,14 +309,13 @@ ul {
         border-right: 1600px solid white;
         top: -40px;
     }
-    .main-menu__list {
-        display: block;
-    }
     .main-menu__toggle {
         display: none;
     }
     .main-menu__list {
         display: flex;
+        margin-left: 0; 
+        margin-right: 0;
     }
     .header-logo {
         width: 152px;
@@ -668,6 +745,23 @@ ul {
     }
     .covid {
         width: 357px;
+    }
+}
+@media (min-width: 720px) {
+    .members__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .members__item {
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .committee__container {
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
 
@@ -1101,7 +1195,7 @@ ul {
 }
 
 .speakers-wrapper {
-    max-width: 320px;
+    max-width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
     margin-top: -88px;
@@ -1188,7 +1282,7 @@ ul {
 
 .speakers__item {
     width: 160px;
-    height: 160px;
+    height: auto;
     flex-grow: 1;
     margin-bottom: -5px
 }
@@ -1831,7 +1925,7 @@ ul {
 
 .dates__container {
     max-width: 320px;
-    margin: 0 auto;
+    margin: 0;
     box-sizing: border-box;
     background-image: url("../img/bridge-mobile.png");
     background-repeat: no-repeat;
@@ -1927,7 +2021,8 @@ ul {
         height: 581px;
     }
     .dates__container {
-        max-width: 414px;
+        max-width: 100%;
+        margin: 0;
     }
     .key-dates__date,
     .congress-dates__date {
@@ -1998,6 +2093,48 @@ ul {
         margin-top: 133px;
         display: flex;
         flex-direction: column;
+        position: relative;
+    }
+    .dates__container::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("../img/cut-right-mobile-key-dates.png");
+        background-repeat: no-repeat;
+        background-position: right center;
+        width: 325px;
+        height: 375px;
+        top: 50px;
+        right: 0;
+        z-index: -5;
+        mix-blend-mode: darken;
+    }
+    .dates::after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: var(--basic-blue);
+        border-radius: 50%;
+        top: 155px;
+        left: 350px;
+        width: 1000px;
+        height: 1000px;
+        filter: blur(100px);
+        z-index: -10;
+    }
+    .dates__wrapper::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("../img/cut-left-mobile-key-dates.png");
+        background-repeat: no-repeat;
+        background-position: left center;
+        width: 325px;
+        height: 375px;
+        bottom: -170px;
+        left: -350px;
+        z-index: -5;
+        mix-blend-mode: darken;
     }
     .dates__title {
         left: 50%;
