@@ -97,6 +97,16 @@ ul {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.mobile-only {
+    display: block;
+}
+
+@media (min-width: 1024px) {
+    .mobile-only {
+        display: none;
+    }
+}
+
 
 /*-------------------- Header --------------------*/
 
@@ -117,6 +127,7 @@ ul {
 
 .header-image {
     display: block;
+    margin: auto;
 }
 
 .main-menu__item {
@@ -161,12 +172,19 @@ ul {
     width: 100%;
 }
 
-.main-menu__item--registration {
+.main-menu__item--registration,
+.main-menu__item--mobile-registration {
     margin-left: auto;
     margin-right: auto;
 }
 
-.main-menu__link--registration {
+.main-menu__item--mobile-registration {
+    padding: 30px;
+    padding-bottom: 100px;
+}
+
+.main-menu__link--registration,
+.main-menu__link--mobile-registration {
     background-color: var(--basic-pink);
     color: var(--basic-white);
     font-weight: 600;
@@ -177,9 +195,11 @@ ul {
     min-height: 47px;
     display: inline-block;
 }
-
-.main-menu__list {
-    display: none;
+.main-menu__link--mobile-registration {
+    width: 100%;
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 15px;
 }
 
 .main-menu__sublist {
@@ -194,9 +214,120 @@ ul {
     border: none;
 }
 
+.main-menu__toggle-close {
+    background-image: url("../img/close-icon.svg");
+    width: 24px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+}
+
+body{
+    width:100vw;
+    height:100vh;
+  }
+
+.main-menu__list {
+    display: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    background-color: var(--basic-white);
+    z-index: 100;
+}
+.main-menu__list-active {
+    display: block;
+}
+.main-menu__item:not(.main-menu__item--language):not(.main-menu__item--registration):not(.main-menu__item--mobile-registration) {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    width: 100%;
+    padding: 20px 30px;
+}
+.main-menu__item:not(.main-menu__item--language):not(.main-menu__item--registration)::after,
+.main-menu__item-active:not(.main-menu__item--language):not(.main-menu__item--registration)::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    opacity: 0.1;
+    background-color: #14429A;
+}
+.main-menu__link--info::after,
+.main-menu__link--program::after,
+.main-menu__link--accomodation::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("../img/arrow-down.svg");;
+    width: 6px;
+    height: 3px;
+    top: 30px;
+    right: 25px;
+}
+.main-menu__item-active,
+.main-menu__item:not(.main-menu__item--registration):hover {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    width: 100%;
+    padding: 20px 30px;
+    color: var(--basic-pink);
+}
+.main-menu__item:not(.main-menu__item--registration):hover .main-menu__subitem {
+    font-size: 16px;
+    text-transform: none;
+    line-height: 29px;
+    padding: 20px;
+    color: #042159;
+}
+.main-menu__link-active {
+    color: var(--basic-pink);
+}
+.main-menu__link-active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("../img/arrow-up.svg");;
+    width: 6px;
+    height: 3px;
+    top: 30px;
+    right: 25px;
+}
+.main-menu__sublist {
+    display: none;
+}
+.main-menu__sublist-active {
+    display: block;
+}
+.main-menu__subitem {
+    font-size: 16px;
+    text-transform: none;
+    line-height: 29px;
+    padding: 20px;
+    color: #042159;
+}
+.main-menu__subitem:first-of-type {
+    padding-top: 30px;
+}
+
 @media (min-width: 414px) {
     .container {
-        width: 414px;
+        width: 100%;
     }
     .header-logo {
         position: absolute;
@@ -218,7 +349,6 @@ ul {
     }
     .header-video {
         width: 100%;
-        height: 100%;
         display: block;
         position: relative;
     }
@@ -241,6 +371,12 @@ ul {
         flex-wrap: wrap;
         margin-left: 15px;
         margin-right: 15px;
+        width: auto;
+        position: inherit;
+        left: 0;
+        top: 50px;
+        background-color: var(--basic-white);
+        z-index: 1;
     }
     .header-logo {
         width: 152px;
@@ -257,7 +393,13 @@ ul {
         position: relative;
         margin-right: 5px;
         margin-top: 10px;
+        width: auto;
         margin-bottom: 10px;
+        padding: 0;
+    }
+    .main-menu__item:not(.main-menu__item--language):not(.main-menu__item--registration):not(.main-menu__item--mobile-registration) {
+        padding: 0;
+        width: auto;
     }
     .main-menu__link{
         display: block;
@@ -286,7 +428,11 @@ ul {
         height: 4px;
         background-color: var(--basic-pink);
     }
-    .main-menu__dropdown:hover::after {
+    .main-menu__item:not(.main-menu__item--language):not(.main-menu__item--registration)::after, .main-menu__item-active:not(.main-menu__item--language):not(.main-menu__item--registration)::after {
+        display: none;
+    }
+    .main-menu__item:not(.main-menu__item--language):not(.main-menu__item--registration):hover::after, 
+    .main-menu__item-active:not(.main-menu__item--language):not(.main-menu__item--registration):hover::after{
         content: "";
         display: block;
         position: absolute;
@@ -296,12 +442,13 @@ ul {
         height: 4px;
         background-color: var(--basic-white);
         z-index: 5;
+        opacity: 1;
     }
     .main-menu__dropdown:hover .main-menu__sublist {
         display: block;
         position: absolute;
-        top: 83px;
-        left: 0px;
+        top: 89px;
+        left: -1px;
         min-width: 225px;
         color: var(--text-dark-blue);
     }
@@ -352,7 +499,6 @@ ul {
     }
     .header-video {
         width: 100%;
-        height: 100%;
         display: block;
         position: relative;
     }
@@ -382,7 +528,6 @@ ul {
     .header-logo {
         width: 152px;
         height: 83px;
-        margin-right: 155px;
         position: inherit;
     }
     .header-logo__image {
