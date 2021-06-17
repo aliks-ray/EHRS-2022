@@ -399,6 +399,7 @@ ul {
         width: 152px;
         height: 83px;
         position: inherit;
+        transform: none;
     }
     .header-logo__image {
         width: 152px;
@@ -2693,4 +2694,109 @@ ul {
     .congress-dates__date {
         font-size: 98px;
     }
+}
+
+/*---------------- old styles ----------------*/
+
+.bloks {
+    width: 100%;
+    min-height: 250px;
+    display: grid;
+    margin-top: -5px;
+}
+.black {
+    background: #2F3538; 
+    grid-column: 2;
+}
+.red {
+    background: #EE3D48; 
+    grid-column: 1;
+}
+h2.blok {
+    font-family: Museo Sans Cyrl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 43px;
+    color: #FFFFFF;
+    width: 500px;
+    margin-left: 75px;
+}
+p.blok {
+    font-family: Museo Sans Cyrl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    width: 500px;
+    margin-left: 75px;
+
+}
+@media (min-width: 320px) and (max-width: 1160px) {
+    .black {
+        grid-column: 1;
+    }
+    p.blok {
+        width: 75%;
+        margin-bottom: 75px; 
+        font-size: 25px;
+    }
+    h2.blok {
+        width: 75%;
+        margin-top: 75px; 
+        font-size: 36px; 
+        line-height: 43px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bloks {
+        margin-top: 0;
+    }
+}
+
+/*стрелка */
+.arrow-8 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin: 30px auto 80px auto;
+    left: 50%;
+    right: 50%;
+    top: 65%;
+}
+.arrow-8:before,
+.arrow-8:after {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    border-left: 3px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
+    animation: arrow-8 3s linear infinite;
+    z-index: 2;
+    margin: 50%;
+    top: -10%;
+    left: -65px;
+    transform: rotate(-45deg);
+}
+
+@keyframes arrow-8 {
+0% {
+    opacity: 0;
+    transform: translate(0, -53px) rotate(-45deg);
+}
+10%, 90% {
+    opacity: 0;
+}
+50% {
+    opacity: 1;  
+    transform: translate(0, 0) rotate(-45deg);
+}
+100% {
+    opacity: 0;
+    transform: translate(0, 53px) rotate(-45deg);
+}
 }
